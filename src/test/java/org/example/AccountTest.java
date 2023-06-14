@@ -24,11 +24,9 @@ class AccountTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"008-9999999-04", "078-6667778-09", "066-7778882-36"})
-    public void constructor_ShouldAcceptValidAccountNumbers(String accountNumber) {
+    public void constructor_ShouldNotThrowForValidAccountNumbers(String accountNumber) {
 
-        Account account = new Account(accountNumber);
-
-        Assertions.assertEquals(account.getAccountNumber(), accountNumber);
+        Assertions.assertDoesNotThrow(() -> new Account(accountNumber));
     }
 
 }

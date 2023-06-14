@@ -9,10 +9,6 @@ public class Account {
         this.setAccountNumber(accountNumber);
     }
 
-    public String getAccountNumber() {
-        return this.accountNumber;
-    }
-
     private void setAccountNumber(String accountNumber) {
 
         if (accountNumber != null && Pattern.matches("^\\d{3}-\\d{7}-\\d{2}$", accountNumber)) {
